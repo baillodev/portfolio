@@ -701,6 +701,10 @@ footer aside ul {
     padding: 10px;
   }
 
+  .card-container {
+    gap: 5px;
+  }
+
   .card {
     width: 220px;
   }
@@ -712,8 +716,26 @@ footer aside ul {
   footer aside ul {
     justify-content: center;
   }
+}
 
-  /* .up {
-    display: block;
-  } */
+@media (max-width: 496px) {
+  .card {
+    width: 150px;
+  }
+
+  .card svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 5px;
+  }
+
+  .card h3 {
+    font-size: 0.8rem;
+    margin: 5px 0;
+  }
+  
+  .card p {
+    font-size: 0.5rem;
+    line-height: 1.5;
+  }
 }
