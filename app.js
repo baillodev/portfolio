@@ -13,6 +13,8 @@ const dynamicWord = document.getElementById('dynamic-word')
 const words = ['web', 'mobile']
 let wordIndex = 0;
 
+let ratio = .8
+
 const backHome = document.querySelector('.up')
 
 const meContacterButton = document.querySelector("#a-propos button")
@@ -22,6 +24,7 @@ let obs = null
 
 theme.addEventListener('click', () => {
     root.classList.toggle("light")
+    root.style.transition = 'background .3s'
     theme.innerText = root.classList.contains('light') ? 'dark_mode': 'light_mode'
 })
 
@@ -33,6 +36,7 @@ const handleMenuDisplay = (e) => {
     openMenu.style.display = 'block'
     closeMenu.style.display = 'block'
     backHome.style.visibility = 'visible'
+    ratio = .4
   } else {
     menu.classList.remove('entry')
     menu.classList.add('reveal')
@@ -40,6 +44,7 @@ const handleMenuDisplay = (e) => {
     openMenu.style.display = 'none'
     closeMenu.style.display = 'none'
     backHome.style.visibility = 'hidden'
+    ratio = .6
   }
 }
 
@@ -119,7 +124,7 @@ const scrollSpy = function (elements) {
         elements.forEach(el => observer.unobserve(el))
     }
 
-    const y = Math.round(window.innerHeight * 0.4)
+    const y = Math.round(window.innerHeight * ratio)
     obs = new IntersectionObserver(callback, {
         rootMargin: `-${window.innerHeight - y - 1}px 0px -${y}px 0px`
     })

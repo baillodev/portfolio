@@ -25,7 +25,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  background-color: var(--background);
 }
 
 .actions {
@@ -398,26 +397,6 @@ button:hover::before {
   font-size: 0.8rem;
 }
 
-/* #alert-container {
-  margin-top: 20px;
-}
-
-.alert {
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: bold;
-}
-
-.alert.success {
-  background-color: green;
-}
-
-.alert.error {
-  background-color: red;
-} */
-
 footer aside {
   background: var(--shadow);
   padding: 40px;
@@ -549,6 +528,42 @@ footer aside ul {
 
 /*************** RESPONSIVE *************/
 
+@media screen and (min-width: 1500px) {
+  body {
+    width: 60vw;
+  }
+
+  header {
+    padding: 40px 0;
+  }
+
+  #accueil,
+  #a-propos,
+  #competences {
+    padding: 120px 0;
+  }
+  #contact {
+    padding: 120px 120px 50px;
+  }
+
+  #a-propos,
+  #competences {
+    gap: 30px;
+  }
+
+  #a-propos h2,
+  #competences h2,
+  #contact h2 {
+    margin-bottom: 30px;
+  }
+
+  #a-propos p {
+    padding: 0 50px;
+    line-height: 1.8rem;
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 980px) {
   body {
     width: 85vw;
@@ -624,6 +639,10 @@ footer aside ul {
 
   .card p {
     font-size: 0.75rem;
+  }
+
+  .badge:not(:first-child) {
+    padding: 3px;
   }
 
   footer aside {
@@ -702,11 +721,19 @@ footer aside ul {
   }
 
   .card-container {
-    gap: 5px;
+    gap: 10px;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
   }
 
   .card {
     width: 220px;
+  }
+
+  .badge:not(:first-child) {
+    padding: 2px;
   }
 
   footer aside p {
@@ -718,7 +745,7 @@ footer aside ul {
   }
 }
 
-@media (max-width: 496px) {
+@media (max-width: 500px) {
   .card {
     width: 150px;
   }
